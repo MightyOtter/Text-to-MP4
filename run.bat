@@ -22,7 +22,10 @@ for %%i in ("%input_path%\*.txt") do (
   set "output_path=%output_dir%\!file_name!"
   
   rem Run the Python command with the current input file and output directory
-  python tortoise/read.py --voice stephenfry --text "%%~i" --preset ultra_fast --output_path "!output_path!"
+  python D:/Users/Henry/Downloads/github/tortoise-tts/tortoise/read.py --voice stephenfry --text "%%~i" --preset ultra_fast --seed 1684581035 --output_path "!output_path!"
+
+  rem Move the text file somewhere else
+  move "%%i" "%output_dir%\"
 )
 
 rem Pause the script so that it doesn't immediately close when finished
